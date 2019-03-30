@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+
+#   devise :database_authenticatable, :registerable,
+# :recoverable, :rememberable, :validatable
+
+  # Make omniauthable
   devise :omniauthable, :omniauth_providers => [:google_oauth2]
 
   def self.from_omniauth(auth)

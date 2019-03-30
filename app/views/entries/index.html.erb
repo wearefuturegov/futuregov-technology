@@ -1,2 +1,13 @@
 <h1>Entries#index</h1>
 <p>Find me in app/views/entries/index.html.erb</p>
+
+
+
+<%# <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %> %>
+
+<% if current_user %>
+
+  User ID: <%= current_user.uid %>
+
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>   
+<% end %>
