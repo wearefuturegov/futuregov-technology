@@ -1,0 +1,7 @@
+
+<h1>New entry</h1>
+<%= form_with model: @entry, local: true do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_area :body %>
+    <%= f.submit%>
+<% end %>

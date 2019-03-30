@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
+  resources :entries
+
 
   
 
