@@ -3,5 +3,7 @@
 <%= form_with model: @entry, local: true do |f| %>
     <%= f.text_field :title %>
     <%= f.text_area :body %>
+    <%= f.select :category_id, options_for_select(@categories) %>
+
     <%= f.submit%>
 <% end %>
