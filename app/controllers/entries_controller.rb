@@ -3,6 +3,7 @@ class EntriesController < ApplicationController
 
   def index
     @entries = Entry.all
+    @categories = Category.all
   end
 
   def new
@@ -22,7 +23,7 @@ class EntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:entry).permit(:title, :body)
+    params.require(:entry).permit(:title, :body, :category_id)
   end
 
 end
