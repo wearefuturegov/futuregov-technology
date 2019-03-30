@@ -1,0 +1,35 @@
+.login-background{
+    min-height: 100vh;
+    background-color: $backgroundNeutral;
+    padding: 20px;
+}
+
+.login-panel{
+    background-color: $white;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 330px;
+    margin: 40px auto 0px auto;
+    box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.4);
+    text-align: center;
+    color: $darkPurple;
+}
+
+.login-panel__header{
+    padding: 30px;
+}
+
+.login-panel__actions{
+    padding: 30px;
+    background-color: $backgroundReddish;
+}
+
+.login-panel__logo{
+    width: 100%;
+    max-width: 200px;
+}
+
+.login-panel__name{
+    font-weight: normal;
+    margin-bottom: 25px;
+}

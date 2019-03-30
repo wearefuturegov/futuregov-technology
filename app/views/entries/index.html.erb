@@ -1,23 +1,9 @@
-<h1>Entries#index</h1>
-<p>Find me in app/views/entries/index.html.erb</p>
-
-<ul>
-  <% @categories.each do |cat| %>
-    <li><%= cat.name %></li>
-    <ul>
-      <% cat.entries.each do |entry| %>
-        <li><%= entry.title %></li>
-      <% end %>
-    </ul>
-  <% end %>
-</ul>
-
-
-<%= link_to "New entry", new_entry_path %>
-
-<% if current_user %>
-
-  User ID: <%= current_user.uid %>
-
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>   
-<% end %>
+<div class="app">
+    <%= render 'layouts/header' %>
+    <div class="app-body">
+        <%= render 'entries/contents' %>
+        <main class="content-area">
+            Main content area
+        </main>
+    </div>
+</div>

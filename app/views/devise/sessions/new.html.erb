@@ -1,5 +1,14 @@
-<h2>Log in</h2>
+<div class="login-background">  
 
+    <div class="login-panel">
+        <header class="login-panel__header">
+            <%= image_tag "wordmark-black.svg", class: "login-panel__logo" %>
+            <h1 class="login-panel__name">Technology</h1>
+            <p>Log in with your FutureGov email address</p>
+        </header>
+        <div class="login-panel__actions">
+            <%= render "devise/shared/links" %>
+        </div>
+    </div>
 
-
-<%= render "devise/shared/links" %>
+</div>
