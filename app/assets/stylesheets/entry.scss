@@ -1,0 +1,33 @@
+.entry__header{
+    margin-bottom: 30px; 
+    @media screen and (min-width: 800px) {
+        margin-bottom: 40px;
+    }
+}
+
+.entry__title{
+    font-weight: normal;
+    margin-bottom: 5px;
+    @media screen and (min-width: 800px) {
+        font-size: 2.5em;
+    }
+    @media screen and (min-width: 1000px) {
+        font-size: 3em;
+    }
+}
+
+.entry__updated{
+    font-style: italic;
+    color: $lightGrey;
+    @media screen and (min-width: 1000px) {
+        font-size: 1.1em;
+    }
+}
+
+.entry__content{
+    font-size: 1.1em;
+    line-height: 1.5em;
+    @media screen and (min-width: 1000px) {
+        font-size: 1.2em;
+    }
+}

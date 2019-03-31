@@ -15,7 +15,6 @@ a {
     }
 }
 
-
 .button{
     display: inline-block;
     font-weight: 600;
@@ -39,7 +38,6 @@ a {
     }
 }
 
-
 @media screen and (min-width: 800px){
     .app{
         height: 100vh;
@@ -51,6 +49,7 @@ a {
         display: grid;
         grid-template-columns: 330px 1fr;
         flex: 1;
+        overflow: hidden;
     }
 }
 
@@ -58,3 +57,4 @@ a {
 @import 'header';
 @import 'contents';
 @import 'content-area';
+@import 'entry';

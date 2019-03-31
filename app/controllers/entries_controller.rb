@@ -1,9 +1,13 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_categories, only: [:show, :index, :new]
 
   def index
     @entries = Entry.all
-    @categories = Category.all
+  end
+
+  def show
+    @entry = Entry.find(params[:id])
   end
 
   def new
@@ -21,6 +25,10 @@ class EntriesController < ApplicationController
   end
 
   private
+
+  def set_categories
+    @categories = Category.all
+  end
 
   def entry_params
     params.require(:entry).permit(:title, :body, :category_id)

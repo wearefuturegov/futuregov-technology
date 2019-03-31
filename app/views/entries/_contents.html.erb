@@ -12,7 +12,7 @@
           <h3 class="contents__heading"><%= cat.name %></h3>
           <ul class="contents__category-list">
             <% cat.entries.each do |entry| %>
-              <li class="contents__entry"><%= link_to entry.title, entry_path(entry), class: "contents__entry-link" %></li>
+              <li class="contents__entry"><%= link_to entry.title, entry_path(entry), class: "contents__entry-link #{"contents__entry-link--active" if current_page? entry_path(entry)}" %></li>
             <% end %>
           </ul>
         </li>

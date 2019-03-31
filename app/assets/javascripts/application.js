@@ -16,8 +16,16 @@
 //= require_tree .
 
 
+
+
 document.addEventListener("turbolinks:load", ()=> {
     toggleContents()
+
+
+    document.querySelectorAll(".best_in_place").forEach((el)=>{
+        el.best_in_place()
+    })
+
 })
 
 
