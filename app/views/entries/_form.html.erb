@@ -1,0 +1,21 @@
+<%= form_with model: @entry, local: true do |f| %>
+
+
+    <div class="form-field">
+        <%= f.label :title, class: "form-label" %>
+        <%= f.text_field :title, class: "form-input" %>
+    </div>
+
+    <div class="form-field">
+        <%= f.label :category_id, class: "form-label" %>
+        <%= f.select :category_id, options_for_select(@category_options) %>
+    </div>
+
+    <div class="form-field">
+        <%= f.label :body, class: "form-label" %>
+        <%= f.text_area :body, class: "form-input" %>
+    </div>
+
+    <%= f.submit "Save", class: "button" %>
+
+<% end %>

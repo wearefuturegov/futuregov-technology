@@ -1,9 +1,4 @@
-
-<h1>New entry</h1>
-<%= form_with model: @entry, local: true do |f| %>
-    <%= f.text_field :title %>
-    <%= f.text_area :body %>
-    <%= f.select :category_id, options_for_select(@categories) %>
-
-    <%= f.submit%>
+<%= render layout: 'layouts/entries' do %>
+    <h1>New entry</h1>
+    <%= render 'entries/form' %>
 <% end %>

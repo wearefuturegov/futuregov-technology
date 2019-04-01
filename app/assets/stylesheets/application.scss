@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background: $backgroundReddish;
+}
+
 a {
     color: $pink;
     &:hover{
@@ -55,6 +59,8 @@ a {
 
 @import 'login';
 @import 'header';
+@import 'footer';
+@import 'notifications';
 @import 'contents';
 @import 'content-area';
 @import 'entry';

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FutureGov Technology</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type => "image/x-icon" %>
+    <link rel="stylesheet" href="https://use.typekit.net/uru8mtl.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="turbolinks-cache-control" content="no-cache">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <div class="app">
+        <%= render 'layouts/header' %>
+        <div class="app-body">
+            <%= render 'layouts/contents' %>
+            <div>
+                <main class="content-area">
+
+                  <% if notice %>
+                    <p class="notification notification--notice"><%= notice %></p>
+                  <% end %>
+                  <% if alert %>
+                    <p class="notification notification--alert"><%= alert %></p>
+                  <% end %>
+
+                  <%= yield %>
+
+                </main>
+                <footer class="site-footer">
+                    <p class="site-footer__info">Built and maintained by the FutureGov technology and data practice.</p>
+                    <%= link_to "Log out", destroy_user_session_path , class: "site-footer__link" %>
+                </footer>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

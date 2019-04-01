@@ -1,9 +1,3 @@
-<div class="app">
-    <%= render 'layouts/header' %>
-    <div class="app-body">
-        <%= render 'entries/contents' %>
-        <main class="content-area">
-            Main content area
-        </main>
-    </div>
-</div>
+<%= render layout: 'layouts/entries' do %>
+meep
+<% end %>

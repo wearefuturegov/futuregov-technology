@@ -1,23 +1,11 @@
-<div class="app">
-    <%= render 'layouts/header' %>
-    <div class="app-body">
-        <%= render 'entries/contents' %>
-        <main class="content-area">
-            
-            <div class="entry">
-
-            <%= best_in_place @entry, :title, :type => :input %>
-
-
-                <div class="entry__header">
-                    <h1 class="entry__title"><%= @entry.title %></h1>
-                    <p class="entry__updated">Last updated <%= time_ago_in_words(@entry.updated_at) %> ago</p>
-                </div>
-                <div class="entry__content">
-                    <%= @entry.body %>
-                </div>
-            </div>
-
-        </main>
+<%= render layout: 'layouts/entries' do %>
+    <div class="entry">
+        <div class="entry__header">
+            <h1 class="entry__title"><%= @entry.title %></h1>
+            <p class="entry__updated">Last updated <%= time_ago_in_words(@entry.updated_at) %> ago</p> <%= link_to "Edit entry", edit_entry_path(@entry) %>
+        </div>
+        <div class="entry__content">
+            <%= @entry.body %>
+        </div>
     </div>
-</div>
+<% end %>
