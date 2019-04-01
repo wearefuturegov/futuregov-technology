@@ -3,6 +3,9 @@
     @media screen and (min-width: 800px) {
         margin-bottom: 40px;
     }
+    @media screen and (min-width: 1000px) {
+        margin-bottom: 60px;
+    }
 }
 
 .entry__title{
@@ -13,16 +16,23 @@
     }
     @media screen and (min-width: 1000px) {
         font-size: 3em;
+        margin-bottom: 10px;
     }
 }
 
-.entry__updated{
-    font-style: italic;
-    color: $lightGrey;
+.entry__meta{
     @media screen and (min-width: 1000px) {
         font-size: 1.1em;
     }
 }
+
+.entry__updated{
+    display: inline-block;
+    margin-right: 10px;
+    font-style: italic;
+    color: $lightGrey;
+}
+
 
 .entry__content{
     font-size: 1.1em;

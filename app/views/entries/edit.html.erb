@@ -1,5 +1,8 @@
 <%= render layout: 'layouts/entries' do %>
     <h1>Edit entry</h1>
+
+    <%= link_to "Go back", entry_path(@entry) %>
+
     <%= render 'entries/form' %>
     <%= link_to 'Delete', entry_path(@entry), method: :delete %> 
 <% end %>

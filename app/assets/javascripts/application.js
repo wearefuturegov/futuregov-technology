@@ -16,14 +16,10 @@
 //= require_tree .
 //= require trix
 
-
-document.addEventListener("DOMContentLoaded", ()=> {
+const initialiseFunctions = ()=> {
     toggleContents()
-})
-document.addEventListener("turbolinks:load", ()=> {
-    toggleContents()
-})
-
+    Trix.config.blockAttributes.default.tagName = 'p';
+}
 
 const toggleContents = () => {
     const toggleButton = document.querySelector(".contents__toggle")
@@ -41,3 +37,6 @@ const toggleContents = () => {
         }
     })
 }
+
+document.addEventListener("DOMContentLoaded", initialiseFunctions)
+document.addEventListener("turbolinks:load", initialiseFunctions)

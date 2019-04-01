@@ -2,7 +2,10 @@
     <div class="entry">
         <div class="entry__header">
             <h1 class="entry__title"><%= @entry.title %></h1>
-            <p class="entry__updated">Last updated <%= time_ago_in_words(@entry.updated_at) %> ago</p> <%= link_to "Edit entry", edit_entry_path(@entry) %>
+            <div class="entry__meta">
+                <p class="entry__updated">Last updated <%= time_ago_in_words(@entry.updated_at) %> ago</p>
+                <%= link_to "Edit entry", edit_entry_path(@entry) %>
+            </div>
         </div>
         <div class="entry__content">
             <%= sanitize @entry.body %>
