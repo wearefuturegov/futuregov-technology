@@ -5,9 +5,11 @@
     overflow-y: scroll;
     width: 100%;
     height: 100%;
+    border-bottom: 1px solid transparentize($lightGrey, 0.9);
     @media screen and (min-width: 800px){
         padding: 25px;
         max-width: 330px;
+        border-bottom: none;
         border-right: 1px solid transparentize($lightGrey, 0.9);
     }
 }

@@ -1,4 +1,9 @@
 <%= render layout: 'layouts/entries' do %>
-    <h1>New entry</h1>
-    <%= render 'entries/form' %>
+    <div class="editor" >
+        <div class="editor__header">
+            <h1 class="editor__title">New entry</h1>
+        </div>
+
+        <%= render 'entries/form' %>
+    </div>
 <% end %>

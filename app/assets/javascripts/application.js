@@ -38,5 +38,5 @@ const toggleContents = () => {
     })
 }
 
-document.addEventListener("DOMContentLoaded", initialiseFunctions)
 document.addEventListener("turbolinks:load", initialiseFunctions)
+

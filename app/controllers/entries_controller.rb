@@ -1,8 +1,8 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_categories, only: [:show, :index, :new, :edit]
+  before_action :set_categories, only: [:show, :index, :new, :edit, :update, :create]
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
-  before_action :set_category_options, only: [:new, :edit]
+  before_action :set_category_options, only: [:new, :edit, :update, :create]
 
   def index
     @entries = Entry.all
@@ -23,7 +23,8 @@ class EntriesController < ApplicationController
     if @entry.save
       redirect_to @entry, notice: 'Entry successfully created.'
     else
-      redirect_to @entry, notice: 'There was a problem. Please check your submission and try again.'
+      render :new
+      # redirect_to @entry, notice: 'There was a problem. Please check your submission and try again.'
     end
   end
 
@@ -32,7 +33,8 @@ class EntriesController < ApplicationController
     if @entry.save
       redirect_to @entry, notice: 'Entry successfully updated.'
     else
-      redirect_to @entry, notice: 'There was a problem. Please check your submission and try again.'
+      render :edit
+      # redirect_to @entry, notice: 'There was a problem. Please check your submission and try again.'
     end
   end
 
@@ -48,7 +50,7 @@ class EntriesController < ApplicationController
   end
 
   def set_entry
-    @entry = Entry.find(params[:id])
+    @entry = Entry.find_by slug: params[:slug]
   end
 
   def set_category_options

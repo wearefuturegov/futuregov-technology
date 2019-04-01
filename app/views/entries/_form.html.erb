@@ -1,5 +1,15 @@
 <%= form_with model: @entry, local: true do |f| %>
 
+    <% if @entry.errors.any? %>
+        <div class="notification notification--error">
+            <p>Errors prevented this entry from being saved:</p>
+            <ul>
+                <% @entry.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
 
     <div class="form-field">
         <%= f.label :title, class: "form-label" %>
@@ -8,12 +18,12 @@
 
     <div class="form-field">
         <%= f.label :category_id, class: "form-label" %>
-        <%= f.select :category_id, options_for_select(@category_options) %>
+        <%= f.select :category_id, options_for_select(@category_options), {}, { :class => "form-select"} %>
     </div>
 
     <div class="form-field">
-        <%= f.label :body, class: "form-label" %>
-        <trix-editor input="entry_body"></trix-editor>
+        <%= f.label :body, class: "form-label visually-hidden" %>
+        <trix-editor input="entry_body" class="form-input"></trix-editor>
         <%= f.hidden_field :body, class: "form-input" %>
     </div>
 
