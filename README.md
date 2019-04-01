@@ -1,24 +1,13 @@
-# README
+# FutureGov technology wiki
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A basic technology wiki app for FutureGov-ers.
 
-Things you may want to cover:
+It's a Rails app using Google OAuth to grant access to anyone with a @wearefuturegov.com Google Account.
 
-* Ruby version
+It needs Google API credentials to make this work.
 
-* System dependencies
+## Deploying to Heroku
 
-* Configuration
+Create a new Heroku app in the normal way and push this repo to it. Make sure that the `RAILS_MASTER_KEY` config variable is set so that the Google API keys in config/credentials.yml` can be decrypted.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Then, run `rails db:schema:load` and `rails db:seed` to prepare the database and create some basic categories for entries to exist in.
