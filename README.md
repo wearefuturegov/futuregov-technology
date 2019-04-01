@@ -8,7 +8,7 @@ It needs Google API credentials to make this work.
 
 ## Deploying to Heroku
 
-Create a new Heroku app in the normal way and push this repo to it. Make sure that the `RAILS_MASTER_KEY` config variable is set so that the Google API keys in config/credentials.yml` can be decrypted.
+Create a new Heroku app in the normal way and push this repo to it. Make sure that the `RAILS_MASTER_KEY` config variable is set so that the Google API keys in `config/credentials.yml` can be decrypted.
 
 Then, run `rails db:schema:load` and `rails db:seed` to prepare the database and create some basic categories for entries to exist in.
 
