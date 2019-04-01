@@ -9,6 +9,7 @@ class EntriesController < ApplicationController
 
   def results
     @results = Entry.where("body ILIKE ? OR title ILIKE ?", "%#{params["search_query"]}%", "%#{params["search_query"]}%")
+    @search_query = params["search_query"]
   end
 
 

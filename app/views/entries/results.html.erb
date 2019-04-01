@@ -1,13 +1,17 @@
 <%= render layout: 'layouts/entries' do %>
 
     <section class="search-results">
-        <h2><%= @results.count %> results</h2>
+        <h2 class="search-results__number"><%= @results.count %> <% if @results.count == 1 %>result<% else %>results<% end %></h2>
+        <ul class="search-results__results">
         <% @results.each do |result| %>
-            <%= link_to entry_path(result) do %>
-                <h3><%= result.title %></h3>
-            <% end %>
-            <p><%= strip_tags result.body.truncate(140) %></p>
+            <li class="search-results__result">
+                <%= link_to entry_path(result) do %>
+                    <h3 class="search-results__title"><%= result.title %></h3>
+                <% end %>
+                <p class="search-results__body"><%= strip_tags result.body.truncate(140) %></p>
+            </li>
         <% end %>
+        </ul>
     </section>
 
 <% end %>
