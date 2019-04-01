@@ -13,7 +13,8 @@
 
     <div class="form-field">
         <%= f.label :body, class: "form-label" %>
-        <%= f.text_area :body, class: "form-input", required: true %>
+        <trix-editor input="entry_body"></trix-editor>
+        <%= f.hidden_field :body, class: "form-input" %>
     </div>
 
     <%= f.submit "Save", class: "button" %>

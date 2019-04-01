@@ -1,3 +1,4 @@
+@import 'trix';
 @import '_vars';
 
 * {
@@ -50,10 +51,17 @@ a {
         flex-direction: column;
     }
     .app-body{
-        display: grid;
-        grid-template-columns: 330px 1fr;
+        display: flex;
+        flex-direction: row;
         flex: 1;
         overflow: hidden;
+    }
+    .main-pane{
+        width: 100%;
+        flex: 1;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
     }
 }
 

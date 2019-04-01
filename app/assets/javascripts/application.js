@@ -14,18 +14,14 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require trix
 
 
-
-
+document.addEventListener("DOMContentLoaded", ()=> {
+    toggleContents()
+})
 document.addEventListener("turbolinks:load", ()=> {
     toggleContents()
-
-
-    document.querySelectorAll(".best_in_place").forEach((el)=>{
-        el.best_in_place()
-    })
-
 })
 
 
