@@ -5,7 +5,6 @@ class EntriesController < ApplicationController
   before_action :set_category_options, only: [:new, :edit, :update, :create]
 
   def index
-    @entries = Entry.all
   end
 
   def show
@@ -39,7 +38,7 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    @entry.destroy
+    @entry.discard
     redirect_to entries_path
   end
 

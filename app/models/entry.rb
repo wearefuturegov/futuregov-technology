@@ -6,6 +6,9 @@ class Entry < ApplicationRecord
   before_create :set_slug
   before_update :set_slug
 
+  include Discard::Model
+  default_scope -> { kept }
+
   def to_param
     slug
   end
