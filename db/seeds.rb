@@ -9,7 +9,9 @@
 categories = [
   "General",
   "Computing",
-  "Networking"
+  "Networking and infrastructure",
+  "Software development",
+  "IT organisations and operations"
 ]
 
 categories.each do |name |

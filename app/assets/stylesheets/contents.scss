@@ -4,10 +4,10 @@
     overflow-x: hidden;
     overflow-y: scroll;
     width: 100%;
-    max-width: 330px;
     height: 100%;
     @media screen and (min-width: 800px){
         padding: 25px;
+        max-width: 330px;
         border-right: 1px solid transparentize($lightGrey, 0.9);
     }
 }
