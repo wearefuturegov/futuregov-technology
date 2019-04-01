@@ -26,6 +26,9 @@
     font-size: 1.1em;
     border: 1px solid $lighterGrey;
     border-radius: 8px;
+    background: image-url("chevron.svg");
+    background-repeat: no-repeat;
+    background-position: 94% 50%;
 }
 
 trix-editor{
