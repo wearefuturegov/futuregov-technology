@@ -20,8 +20,13 @@
     p{
         margin-bottom: 20px;
     }
+
+    i {
+        color: $lightGrey;
+        margin-right: 15px;
+    }
 }
 
-.notification--error{
+.notification--alert{
     background-color: transparentize($red, 0.8)
 }

@@ -23,6 +23,10 @@ a {
     &:hover{
         text-decoration: none;
     }
+    i{
+        color: $pink;
+        // margin-right: 5px;
+    }
 }
 
 .visually-hidden{
@@ -60,6 +64,13 @@ a {
         color: $red;
         &:hover{
             background-color: $red;
+            color: $white;
+        }
+        i{
+            color: $red;
+            margin-right: 5px;
+        }
+        &:hover i{
             color: $white;
         }
     }

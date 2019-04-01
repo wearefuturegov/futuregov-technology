@@ -10,7 +10,7 @@
         
         <section class="editor__delete">
             <p>Or, remove this entry entirely:</p>
-            <%= link_to '×  Remove', entry_path(@entry), method: :delete, data: {confirm: "Are you sure you want to remove this entry?"}, class: "button button--danger" %> 
+            <%= link_to fa_icon( "trash", text: "Remove"), entry_path(@entry), method: :delete, data: {confirm: "Are you sure you want to remove this entry?"}, class: "button button--danger" %> 
         </section>
         
     </div>

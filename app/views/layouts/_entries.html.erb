@@ -7,10 +7,10 @@
             <main class="content-area">
 
               <% if notice %>
-                <p class="notification notification--notice"><%= notice %></p>
+                <p class="notification notification--notice"><%= fa_icon "check" %> <%= notice %></p>
               <% end %>
               <% if alert %>
-                <p class="notification notification--alert"><%= alert %></p>
+                <p class="notification notification--alert"><%= fa_icon "exclamation" %> <%= alert %></p>
               <% end %>
 
               <%= yield %>
