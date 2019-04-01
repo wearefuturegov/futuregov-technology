@@ -1,0 +1,8 @@
+<%= form_tag "/search", method: :get do %>
+
+    <div class="form-field">
+        <%= label_tag "search_query", "Search query", class: "form-label visually-hidden" %>
+        <%= text_field_tag "search_query", nil, placeholder: "Search", class: "form-input", required: true %>
+    </div>
+
+<% end %>

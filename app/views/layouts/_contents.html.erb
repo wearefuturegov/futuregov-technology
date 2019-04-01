@@ -5,6 +5,8 @@
     <%= image_tag "chevron.svg", class: "contents__toggle-icon" %>
   </button>
 
+  <%= render 'layouts/search' %>
+
   <ul class="contents__list">
     <% @categories.each do |cat| %>
       <% if cat.entries.any? %>

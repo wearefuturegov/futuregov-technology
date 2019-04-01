@@ -1,11 +1,16 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_categories, only: [:show, :index, :new, :edit, :update, :create]
+  before_action :set_categories, only: [:show, :index, :new, :edit, :update, :create, :results]
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
   before_action :set_category_options, only: [:new, :edit, :update, :create]
 
   def index
   end
+
+  def results
+    @results = Entry.where("body ILIKE ? OR title ILIKE ?", "%#{params["search_query"]}%", "%#{params["search_query"]}%")
+  end
+
 
   def show
   end

@@ -11,9 +11,9 @@
 
 .form-input{
     width: 100%;
-    padding: 12px;
+    padding: 13px;
     font-size: 1.1em;
-    border: 1px solid transparentize($lighterGrey, 0.5);
+    border: 1px solid $lighterGrey;
     border-radius: 8px;
 }
 
@@ -21,10 +21,10 @@
     appearance: none;
     -webkit-appearance: none;
     width: 100%;
-    max-width: 200px;
-    padding: 12px;
+    max-width: 300px;
+    padding: 13px;
     font-size: 1.1em;
-    border: 1px solid transparentize($lighterGrey, 0.5);
+    border: 1px solid $lighterGrey;
     border-radius: 8px;
 }
 

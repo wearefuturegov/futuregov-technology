@@ -1,0 +1,13 @@
+<%= render layout: 'layouts/entries' do %>
+
+    <section class="search-results">
+        <h2><%= @results.count %> results</h2>
+        <% @results.each do |result| %>
+            <%= link_to entry_path(result) do %>
+                <h3><%= result.title %></h3>
+            <% end %>
+            <p><%= strip_tags result.body.truncate(140) %></p>
+        <% end %>
+    </section>
+
+<% end %>
