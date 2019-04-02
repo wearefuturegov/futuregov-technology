@@ -55,17 +55,20 @@
 //     }
 // }
 
-.contents__list{
-    margin-top: 20px;
-    list-style-type: none;
+.contents__collapsible{
     display: none;
-    &.contents__list--visible{
+    padding-top: 20px;
+    &.contents__collapsible--visible{
         display: block;
-        // animation: fadeIn 0.15s ease-in-out;
     }
     @media screen and (min-width: 800px){
         display: block;
     }
+}
+
+.contents__list{
+    margin-top: 20px;
+    list-style-type: none;
 }
 
 .contents__heading{
