@@ -1,6 +1,6 @@
 class Entry < ApplicationRecord
   belongs_to :category, optional: true
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true, uniqueness: true, :case_sensitive => false
   validates :body, presence: true
 
   before_create :set_slug
