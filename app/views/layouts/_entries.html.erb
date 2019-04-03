@@ -16,10 +16,7 @@
               <%= yield %>
 
             </main>
-            <footer class="site-footer">
-                <p class="site-footer__info">Built and maintained by the FutureGov technology and data practice.</p>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "site-footer__link" %>
-            </footer>
+            <%= render 'layouts/footer' %>
         </div>
     </div>
 </div>
