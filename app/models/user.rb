@@ -16,6 +16,7 @@ class User < ApplicationRecord
 
       # Also save email and image 
       user.email = auth.info.email
+      user.name = auth.info.name
       user.image = auth.info.image
       
     end

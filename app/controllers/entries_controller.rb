@@ -25,6 +25,7 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.new(entry_params)
+    @entry[:last_editor] = current_user.name
     if @entry.save
       redirect_to @entry, notice: 'Entry successfully created.'
     else
@@ -35,6 +36,7 @@ class EntriesController < ApplicationController
 
   def update
     @entry.update(entry_params)
+    @entry[:last_editor] = current_user.name
     if @entry.save
       redirect_to @entry, notice: 'Entry successfully updated.'
     else
