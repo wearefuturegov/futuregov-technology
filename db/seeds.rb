@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 categories = [
-  "General",
-  "Computing",
-  "Networking and infrastructure",
-  "Software development",
-  "IT organisations and operations"
+  "Technology General",
+  "Common Applications",
+  "Platform & Infrastructure",
+  "Organisation & Roles",
+  "Software Development"
 ]
 
 categories.each do |name |
