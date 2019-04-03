@@ -18,7 +18,7 @@
 
     <div class="form-field">
         <%= f.label :category_id, class: "form-label" %>
-        <%= f.select :category_id, options_for_select(@category_options), {}, { :class => "form-select"} %>
+        <%= f.select :category_id, options_for_select(@category_options, @entry.category_id), {}, { :class => "form-select"} %>
     </div>
 
     <div class="form-field">
