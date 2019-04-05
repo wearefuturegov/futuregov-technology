@@ -6,6 +6,13 @@ class Entry < ApplicationRecord
   before_create :set_slug
   before_update :set_slug
 
+  include PgSearch
+  pg_search_scope :search_title_or_body, 
+    against: [:title, :body],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   include Discard::Model
   default_scope -> { kept }
 
