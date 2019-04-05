@@ -12,6 +12,9 @@
         border-bottom: none;
         border-right: 1px solid transparentize($lightGrey, 0.9);
     }
+    @media screen and (min-width: 1600px) {
+        max-width: 400px;
+    }
 }
 
 .contents__toggle{
