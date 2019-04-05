@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
-#   devise :database_authenticatable, :registerable,
-# :recoverable, :rememberable, :validatable
+  # devise :database_authenticatable, :registerable,
+  # :recoverable, :rememberable, :validatable
 
   # Make omniauthable
   devise :omniauthable, :omniauth_providers => [:google_oauth2]
@@ -18,7 +18,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.name = auth.info.name
       user.image = auth.info.image
-      
     end
   end
+
 end
