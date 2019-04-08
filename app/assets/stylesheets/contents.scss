@@ -60,15 +60,15 @@
 }
 
 .contents__list{
-    margin-top: 20px;
+    margin-top: 50px;
     list-style-type: none;
 }
 
 .contents__heading{
-    font-weight: normal;
+    // font-weight: normal;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: $lightGrey;
+    color: $lighterGrey;
     font-size: 0.9em;
     margin-bottom: 15px;
     @media screen and (min-width: 800px){
@@ -79,17 +79,16 @@
 
 .contents__category-list{
     list-style-type: none;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     @media screen and (min-width: 800px){
-        margin-bottom: 60px;
+        margin-bottom: 70px;
     }
 }
 
 .contents__entry{
     font-size: 1.1em;
     margin-bottom: 15px;
-    font-weight: bold;
-
+    // font-weight: bold;
     @media screen and (min-width: 800px){
         margin-bottom: 20px;
     }
