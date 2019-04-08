@@ -4,7 +4,7 @@
             <h1 class="entry__title"><%= @entry.title %></h1>
             <div class="entry__meta">
                 <p class="entry__updated">Last updated <%= time_ago_in_words(@entry.updated_at) %> ago <% if @entry.last_editor %>by <%= @entry.last_editor %><% end %></p>
-                <%= link_to fa_icon( "edit", text: "Edit entry"), edit_entry_path(@entry) %>
+                <%= link_to fa_icon( "edit", text: "Edit entry"), edit_entry_path(@entry), class: "entry__edit-link" %>
             </div>
         </div>
         <div class="entry__content">

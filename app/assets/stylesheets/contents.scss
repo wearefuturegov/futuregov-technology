@@ -65,12 +65,15 @@
 }
 
 .contents__heading{
-    font-weight: bold;
-    font-size: 1.3em;
+    font-weight: normal;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: $lightGrey;
+    font-size: 0.9em;
     margin-bottom: 15px;
     @media screen and (min-width: 800px){
         margin-bottom: 20px;
-        font-size: 1.5em;
+        // font-size: 1em;
     }
 }
 
@@ -85,6 +88,8 @@
 .contents__entry{
     font-size: 1.1em;
     margin-bottom: 15px;
+    font-weight: bold;
+
     @media screen and (min-width: 800px){
         margin-bottom: 20px;
     }
@@ -99,6 +104,6 @@
 }
 
 .contents__entry-link--active{
-    opacity: 0.5;
+    text-decoration: underline;
     pointer-events: none;
 }
