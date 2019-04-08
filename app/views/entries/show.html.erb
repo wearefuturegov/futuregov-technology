@@ -19,8 +19,8 @@
                 <% if @entry.external_links.any? %>
                     <% @entry.external_links.each do |link| %>
                         <li class="links__link-container">
-                            <%= link_to link.description, link.url, class: "links__link" %>
-                            <%= link_to fa_icon( "trash"), entry_external_link_path(@entry, link), target: :_blank, method: :delete, data: {confirm: "Are you sure you want to remove this link?"}, class: "links__remove-link" %> 
+                            <%= link_to link.description, link.url, target: :_blank, class: "links__link" %>
+                            <%= link_to fa_icon( "trash"), entry_external_link_path(@entry, link), method: :delete, data: {confirm: "Are you sure you want to remove this link?"}, class: "links__remove-link" %> 
                         </li>
                     <% end %>
                 <% end %>
