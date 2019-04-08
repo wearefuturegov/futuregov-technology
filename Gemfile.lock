@@ -81,7 +81,6 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    dialog-polyfill-rails (0.4.5.1)
     discard (1.0.0)
       activerecord (>= 4.2, < 6)
     erubi (1.8.0)
@@ -245,7 +244,6 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
-  dialog-polyfill-rails
   discard (~> 1.0)
   font-awesome-rails
   jbuilder (~> 2.5)
