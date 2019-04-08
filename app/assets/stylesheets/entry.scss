@@ -22,17 +22,15 @@
 
 .entry__meta{
     @media screen and (min-width: 1000px) {
-        // font-size: 1.1em;
+        font-size: 1.1em;
     }
 }
 
 .entry__updated{
     display: block;
     font-weight: normal;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
+    font-style: italic;
     color: $lightGrey;
-    font-size: 0.9em;
     margin-bottom: 15px;
     @media screen and (min-width: 800px) {
         display: inline-block;
