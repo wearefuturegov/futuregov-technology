@@ -1,14 +1,37 @@
 <%= render layout: 'layouts/entries' do %>
     <div class="entry">
-        <div class="entry__header">
+        <section class="entry__header">
             <h1 class="entry__title"><%= @entry.title %></h1>
             <div class="entry__meta">
                 <p class="entry__updated">Last updated <%= time_ago_in_words(@entry.updated_at) %> ago <% if @entry.last_editor %>by <%= @entry.last_editor %><% end %></p>
                 <%= link_to fa_icon( "edit", text: "Edit entry"), edit_entry_path(@entry), class: "entry__edit-link" %>
             </div>
-        </div>
-        <div class="entry__content">
+        </section>
+
+        <section class="entry__content">
             <%= sanitize @entry.body %>
-        </div>
+        </section>
+
+        <section class="links">
+            <h2 class="links__title">Learn more</h2>
+            <ul class="links__list">
+
+                <% if @entry.external_links.any? %>
+                    <% @entry.external_links.each do |link| %>
+                        <li class="links__link-container">
+                            <%= link_to link.description, link.url, class: "links__link" %>
+                            <%= link_to fa_icon( "trash"), entry_external_link_path(@entry, link), target: :_blank, method: :delete, data: {confirm: "Are you sure you want to remove this link?"}, class: "links__remove-link" %> 
+                        </li>
+                    <% end %>
+                <% end %>
+
+                <li class="links__link-container">
+                    <button class="links__new-link">Add link...</button>
+                </li>
+            </ul>
+        </section>
+
+        <%= render 'links/new-link' %>
+
     </div>
 <% end %>

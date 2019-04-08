@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
-  resources :entries, param: :slug
+  resources :entries, param: :slug do
+      resources :external_links, only: [:create, :destroy]    
+  end
   get 'search', to: "entries#results"
 
 

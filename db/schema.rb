@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_08_092815) do
+ActiveRecord::Schema.define(version: 2019_04_08_103023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2019_04_08_092815) do
     t.index ["category_id"], name: "index_entries_on_category_id"
     t.index ["discarded_at"], name: "index_entries_on_discarded_at"
     t.index ["slug"], name: "index_entries_on_slug", unique: true
+  end
+
+  create_table "external_links", force: :cascade do |t|
+    t.string "url"
+    t.string "description"
+    t.bigint "entry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entry_id"], name: "index_external_links_on_entry_id"
   end
 
   create_table "links", force: :cascade do |t|
@@ -64,5 +73,6 @@ ActiveRecord::Schema.define(version: 2019_04_08_092815) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "external_links", "entries"
   add_foreign_key "links", "entries"
 end

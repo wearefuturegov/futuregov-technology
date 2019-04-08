@@ -5,6 +5,16 @@
 // Get vars
 @import '_vars';
 
+// Animations
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 // Global styles and resets
 * {
     margin: 0;
@@ -121,3 +131,4 @@ a {
 @import 'editor';
 @import 'form';
 @import 'results';
+@import 'links';

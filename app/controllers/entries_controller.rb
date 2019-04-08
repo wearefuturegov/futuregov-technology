@@ -9,12 +9,12 @@ class EntriesController < ApplicationController
 
   def results
     @results = Entry.search_title_or_body(params["search_query"])
-    # @results = Entry.where("body ILIKE ? OR title ILIKE ?", "%#{params["search_query"]}%", "%#{params["search_query"]}%")
     @search_query = params["search_query"]
   end
 
 
   def show
+    @link = ExternalLink.new
   end
 
   def new
@@ -31,7 +31,6 @@ class EntriesController < ApplicationController
       redirect_to @entry, notice: 'Entry successfully created.'
     else
       render :new
-      # redirect_to @entry, notice: 'There was a problem. Please check your submission and try again.'
     end
   end
 
@@ -42,7 +41,6 @@ class EntriesController < ApplicationController
       redirect_to @entry, notice: 'Entry successfully updated.'
     else
       render :edit
-      # redirect_to @entry, notice: 'There was a problem. Please check your submission and try again.'
     end
   end
 

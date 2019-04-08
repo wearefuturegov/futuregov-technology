@@ -1,5 +1,7 @@
 {
   "name": "futuregov-technology",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "dialog-polyfill": "^0.5.0"
+  }
 }

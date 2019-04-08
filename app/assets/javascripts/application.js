@@ -10,16 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require dialog-polyfill/dist/dialog-polyfill
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 //= require trix
+//= require_tree .
 
-const initialiseFunctions = ()=> {
-    toggleContents()
-    Trix.config.blockAttributes.default.tagName = 'p';
-}
 
 const toggleContents = () => {
     const toggleButton = document.querySelector(".contents__toggle")
@@ -36,6 +33,12 @@ const toggleContents = () => {
             toggleText.textContent = "Hide contents"
         }
     })
+}
+
+const initialiseFunctions = ()=> {
+    toggleContents()
+    launchDialog()
+    Trix.config.blockAttributes.default.tagName = 'p';
 }
 
 document.addEventListener("turbolinks:load", initialiseFunctions)
