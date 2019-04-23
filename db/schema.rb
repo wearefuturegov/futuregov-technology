@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_08_103023) do
+ActiveRecord::Schema.define(version: 2019_04_23_092133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "collection_id"
+    t.index ["collection_id"], name: "index_categories_on_collection_id"
+  end
+
+  create_table "collections", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,15 +52,6 @@ ActiveRecord::Schema.define(version: 2019_04_08_103023) do
     t.index ["entry_id"], name: "index_external_links_on_entry_id"
   end
 
-  create_table "links", force: :cascade do |t|
-    t.string "url"
-    t.string "description"
-    t.bigint "entry_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["entry_id"], name: "index_links_on_entry_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -74,5 +73,4 @@ ActiveRecord::Schema.define(version: 2019_04_08_103023) do
   end
 
   add_foreign_key "external_links", "entries"
-  add_foreign_key "links", "entries"
 end

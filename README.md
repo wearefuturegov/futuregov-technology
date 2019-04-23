@@ -22,4 +22,4 @@ For the login flow to work, make sure that over on the Google API console:
 * the **authorised javascript origin** is set
 * the **authorised redirect URI** is set
 
-If you have issues, make sure that both the ruby and nodejs buildpacks exist in the Heroku app.
+If you have issues, make sure that both the ruby and nodejs buildpacks exist in the Heroku app, and that the nodejs buildpack is set to run first. Otherwise, Rails asset compilation will fail.
