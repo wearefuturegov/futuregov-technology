@@ -17,26 +17,7 @@
 //= require trix
 //= require_tree .
 
-
-const toggleContents = () => {
-    const toggleButton = document.querySelector(".contents__toggle")
-    const collapsible = document.querySelector(".contents__collapsible")
-    const toggleText = toggleButton.querySelector(".contents__toggle-title")
-    toggleButton.addEventListener("click", ()=>{
-        if(collapsible.classList.contains("contents__collapsible--visible")){
-            collapsible.classList.remove("contents__collapsible--visible")
-            toggleButton.classList.remove("contents__toggle--visible")
-            toggleText.textContent = "Show contents"
-        } else {
-            collapsible.classList.add("contents__collapsible--visible")
-            toggleButton.classList.add("contents__toggle--visible")
-            toggleText.textContent = "Hide contents"
-        }
-    })
-}
-
 const initialiseFunctions = ()=> {
-    toggleContents()
     launchDialog()
     Trix.config.blockAttributes.default.tagName = 'p';
 }
