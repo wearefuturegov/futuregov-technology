@@ -1,11 +1,13 @@
 
 <div class="app">
-    <%= render 'layouts/header' %>
     <div class="app-body">
-        <%= render 'layouts/contents' %>
-        <div class="main-pane">
-            <main class="content-area">
+    
+        <%= render 'layouts/sidebar' %>
 
+        <div class="main-pane">
+            <%= render 'layouts/header' %>
+
+            <main class="content-area">
               <% if notice %>
                 <p class="notification notification--notice"><%= fa_icon "check" %> <%= notice %></p>
               <% end %>
@@ -14,9 +16,10 @@
               <% end %>
 
               <%= yield %>
-
             </main>
+
             <%= render 'layouts/footer' %>
         </div>
+
     </div>
 </div>

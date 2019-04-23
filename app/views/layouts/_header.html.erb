@@ -1,15 +1,5 @@
 <header class="site-header">
 
-  <%= link_to root_path, class: "site-header__masthead" do %>
-
-      <%= image_tag "brandmark.svg", class: "site-header__mobile-logo" %>
-      <h1 class="site-header__mobile-name">Tech</h1>
-
-      <%= image_tag "wordmark.svg", class: "site-header__desktop-logo" %>
-      <h1 class="site-header__desktop-name">Technology Wiki</h1>
-      
-  <% end %>
-
   <div class="site-header__actions">
     <%= link_to "New entry", new_entry_path, class: "site-header__action site-header__action--primary" %>
     <% if current_user %>
