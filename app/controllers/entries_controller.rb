@@ -1,8 +1,11 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_categories, only: [:show, :index, :new, :edit, :update, :create, :results]
+
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
+
   before_action :set_category_options, only: [:new, :edit, :update, :create]
+  before_action :set_collection_options, only: [:new, :edit, :update, :create]
 
   def index
   end
@@ -63,8 +66,12 @@ class EntriesController < ApplicationController
     @category_options = Category.all.map{|c| [ c.name, c.id ] }
   end
 
+  def set_collection_options
+    @collection_options = Collection.all.map{|c| [ c.name, c.id ] }
+  end
+
   def entry_params
-    params.require(:entry).permit(:title, :body, :category_id)
+    params.require(:entry).permit(:title, :body, :category_id, :collection_id)
   end
 
 end

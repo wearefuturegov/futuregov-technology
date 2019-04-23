@@ -12,9 +12,7 @@ Rails.application.routes.draw do
   resources :entries, param: :slug do
       resources :external_links, only: [:create, :destroy]    
   end
+
   get 'search', to: "entries#results"
-
-
-  
 
 end

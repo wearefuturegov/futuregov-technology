@@ -22,6 +22,11 @@
     </div>
 
     <div class="form-field">
+        <%= f.label :collection_id, class: "form-label" %>
+        <%= f.select :collection_id, options_for_select(@collection_options, @entry.collection_id), {}, { :class => "form-select"} %>
+    </div>
+
+    <div class="form-field">
         <%= f.label :body, class: "form-label visually-hidden" %>
         <trix-editor input="entry_body" class="form-input"></trix-editor>
         <%= f.hidden_field :body, class: "form-input" %>

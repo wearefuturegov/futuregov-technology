@@ -15,5 +15,14 @@ categories = [
 ]
 
 categories.each do |name |
-  Category.create(name: name)
+  Category.create( name: name )
+end
+
+
+collections = [
+  "Common terms",
+  "Examples"
+]
+collections.each do |name|
+  Collection.create(name: name)
 end

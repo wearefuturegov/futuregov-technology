@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_23_092056) do
+ActiveRecord::Schema.define(version: 2019_04_23_095200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "collections", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,7 +36,9 @@ ActiveRecord::Schema.define(version: 2019_04_23_092056) do
     t.string "slug"
     t.datetime "discarded_at"
     t.string "last_editor"
+    t.bigint "collection_id"
     t.index ["category_id"], name: "index_entries_on_category_id"
+    t.index ["collection_id"], name: "index_entries_on_collection_id"
     t.index ["discarded_at"], name: "index_entries_on_discarded_at"
     t.index ["slug"], name: "index_entries_on_slug", unique: true
   end
