@@ -6,14 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+Collection.create(name: "Common terms")
+Collection.create(name: "Tech we've seen")
+
 categories = [
-  "Technology General",
-  "Common Applications",
-  "Platform & Infrastructure",
-  "Organisation & Roles",
-  "Software Development"
+  "Technology general",
+  "Platforms & infrastructure",
+  "Organisation & roles",
+  "Software development"
 ]
 
 categories.each do |name |
-  Category.create(name: name)
+  Category.create(name: name, collection_id: 1)
 end
+
+Category.create(name: "Common applications", collection_id: 2)
