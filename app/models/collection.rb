@@ -1,5 +1,5 @@
 class Collection < ApplicationRecord
-    has_many :entries
+    has_many :categories
 
     validates :name, presence: true
 end

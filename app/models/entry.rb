@@ -1,6 +1,5 @@
 class Entry < ApplicationRecord
   belongs_to :category, optional: true
-  belongs_to :collection, optional: true
   has_many :external_links
   
   validates :title, presence: true, uniqueness: true, :case_sensitive => false
