@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_categories, only: [:show, :index, :new, :edit, :update, :create, :results]
+  before_action :set_collections, only: [:show, :index, :new, :edit, :update, :create, :results]
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
   before_action :set_category_options, only: [:new, :edit, :update, :create]
 
@@ -51,8 +51,8 @@ class EntriesController < ApplicationController
 
   private
 
-  def set_categories
-    @categories = Category.all
+  def set_collections
+    @collections = Collection.all
   end
 
   def set_entry
