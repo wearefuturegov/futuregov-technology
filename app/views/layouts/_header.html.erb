@@ -1,5 +1,7 @@
 <header class="site-header">
 
+  <%= render 'layouts/search' %>
+
   <div class="site-header__actions">
     <%= link_to "New entry", new_entry_path, class: "site-header__action site-header__action--primary" %>
     <% if current_user %>

@@ -1,22 +1,25 @@
-<aside class="contents">
+<aside class="sidebar">
+  <div class="sidebar__collections">
 
-  <%= link_to root_path, class: "site-header__masthead" do %>
-      <%= image_tag "wordmark.svg", class: "site-header__desktop-logo" %>
-      <h1 class="site-header__desktop-name">Technology Wiki</h1>
-  <% end %>
-  
-  <div class="contents__collapsible">
+    dark
 
-    <%= render 'layouts/search' %>
+  </div>
 
-    <ul class="contents__list">
+  <div class="sidebar__categories">
+
+    <%= link_to root_path, class: "masthead" do %>
+        <%= image_tag "wordmark.svg", class: "masthead__logo" %>
+        <h1 class="masthead__name">Technology</h1>
+    <% end %>
+
+    <ul class="contents">
       <% @categories.each do |cat| %>
         <% if cat.entries.any? %>
-          <li>
+          <li class="contents__category">
             <h3 class="contents__heading"><%= cat.name %></h3>
             <ul class="contents__category-list">
               <% cat.entries.order('title ASC').each do |entry| %>
-                <li class="contents__entry"><%= link_to entry.title, entry_path(entry), class: "contents__entry-link #{"contents__entry-link--active" if current_page? collection_entry_path(entry)}" %></li>
+                <li class="contents__entry"><%= link_to entry.title, entry_path(entry), class: "contents__entry-link #{"contents__entry-link--active" if current_page? entry_path(entry)}" %></li>
               <% end %>
             </ul>
           </li>
@@ -25,5 +28,5 @@
       <% end %>
     </ul>
 
-  </div>
+  <div>
 </aside>
