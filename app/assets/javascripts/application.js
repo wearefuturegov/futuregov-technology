@@ -17,10 +17,10 @@
 //= require trix
 //= require_tree .
 
-const initialiseFunctions = ()=> {
-    launchDialog()
-    Trix.config.blockAttributes.default.tagName = 'p';
-}
+// const initialiseFunctions = ()=> {
+//     launchDialog()
+//     Trix.config.blockAttributes.default.tagName = 'p';
+// }
 
-document.addEventListener("turbolinks:load", initialiseFunctions)
+// document.addEventListener("turbolinks:load", initialiseFunctions)
 

@@ -2,7 +2,12 @@
 <div class="app">
     <div class="app-body">
     
-        <%= render 'layouts/sidebar' %>
+        <%= react_component "Sidebar", {
+          logoUrl: asset_url("wordmark.svg"),
+          collections: @collections
+        } %>
+
+        <%= debug @collections %>
 
         <div class="main-pane">
             <%= render 'layouts/header' %>
