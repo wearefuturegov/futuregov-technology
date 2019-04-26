@@ -1,10 +1,18 @@
 import React from 'react'
 
-export default ({collections}) =>
+export default ({collections, currentCollection, handleCollectionChange}) =>
     <ul className="collections-list">
         {collections.map((collection, i) =>
-            <li className="collections-list__item collections-list__item--active" key={i}>
-                <button className="collections-list__button">{collection.name}</button>
+            <li 
+                className={(currentCollection === i)? "collections-list__item collections-list__item--active" : "collections-list__item"} 
+                key={i}
+                >
+                <button
+                    className="collections-list__button" 
+                    onClick={()=>{handleCollectionChange(i)}}
+                    >
+                        {collection.name}
+                </button>
             </li>
         )}
     </ul>
