@@ -1,7 +1,67 @@
 .sidebar{
     background: $purple;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
-.sidebar__collections{
+.sidebar__right-pane{
+    display: none;
+}
+
+.sidebar__left-pane{
     background: $darkPurple;
+    height: 100%;
+    width: 70px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.collections-list__item{
+    display: inline-block;
+    position: relative;
+    &:hover{
+        .collections-list__button{
+            color: $white;
+        }
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        display: block;
+        top: 15px;
+        bottom: 15px;
+        width: 7px;
+        border-radius: 0px 7px 7px 0px;
+        background: white;
+        left: -20px;
+        transition: 0.1s ease-in-out;
+    }
+}
+
+.collections-list__item--active{
+    .collections-list__button{
+        color: $white;
+        cursor: initial;
+    }
+    &:after{
+        transform: translateX(10px);
+    }
+}
+
+
+.collections-list__button{
+    font-family: $fontStack;
+    text-transform: uppercase;
+    color: $lighterGrey;
+    letter-spacing: 2px;
+    font-weight: light;
+    font-size: 0.9em;
+    background: none;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
 }

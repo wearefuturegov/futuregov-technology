@@ -24,9 +24,36 @@
     box-sizing: border-box;
 }
 
+.turbolinks-progress-bar{
+    background: $pink
+}
+
 body{
     background: $backgroundReddish;
 }
+
+.app{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar-container{
+    width: 285px;
+    overflow-x: hidden;
+    // overflow-y: scroll;
+    overflow-y: hidden;
+    height: 100vh;
+}
+
+.main-pane{
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
 
 
 

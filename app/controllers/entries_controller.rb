@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_collections, only: [:show, :index, :new, :edit, :update, :create, :results]
+  before_action :set_sidebar_props, only: [:show, :index, :new, :edit, :update, :create, :results]
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
   before_action :set_category_options, only: [:new, :edit, :update, :create]
 
@@ -51,8 +51,12 @@ class EntriesController < ApplicationController
 
   private
 
-  def set_collections
-    @collections = Collection.all
+  def set_sidebar_props
+    @collections = Collection.includes(:categories, :entries).as_json(include: {
+      categories: {
+        include: :entries
+      }
+    })
   end
 
   def set_entry
