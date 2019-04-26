@@ -10,6 +10,7 @@ export default ({collections, currentCollection, handleCollectionChange}) =>
                 <button
                     className="collections-list__button" 
                     onClick={()=>{handleCollectionChange(i)}}
+                    disabled={(currentCollection === i)? true : false}
                     >
                         {collection.name}
                 </button>

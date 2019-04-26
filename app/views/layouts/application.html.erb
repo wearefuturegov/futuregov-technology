@@ -10,13 +10,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="turbolinks-cache-control" content="no-cache">
     <meta name="viewport" content="width=device-width">
-
     <%= render 'layouts/ga'%>
-
+    <%= javascript_pack_tag 'application' %>
   </head>
   <body>
     <%= yield %>
     
-    <%= javascript_pack_tag 'application' %>
   </body>
 </html>

@@ -5,8 +5,9 @@
         <%= react_component "Sidebar", {
           logoUrl: asset_url("wordmark.svg"),
           collections: @collections,
-          activeEntry: params[:slug]
-        }, class: "sidebar-container"%>
+          currentSlug: params[:slug],
+          currentCollectionId: (@entry.collection.id if @entry),
+        }, class: "sidebar-container", prerender: false %>
 
         <div class="main-pane">
             <%= render 'layouts/header' %>

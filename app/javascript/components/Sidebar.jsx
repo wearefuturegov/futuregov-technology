@@ -1,13 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Collections from './Collections'
 import Contents from './Contents'
 
-export default ({logoUrl, collections, activeArticle}) => {
+export default ({logoUrl, collections, currentSlug, currentCollectionId}) => {
 
-    const [currentCollection, setCurrentCollection] = useState(0)
+    let initialCollection = collections.findIndex((collection)=>{
+        if(collection.id === currentCollectionId){
+            return true
+        }
+    })
+
+    if(initialCollection === -1){initialCollection = 0}
+
+    console.log(initialCollection)
+
+    const [currentCollection, setCurrentCollection] = useState(initialCollection)
 
     const handleCollectionChange = (newCollection) => {
-        console.log("changing state to: ", newCollection)
         setCurrentCollection(newCollection)
     }
 
@@ -20,15 +29,15 @@ export default ({logoUrl, collections, activeArticle}) => {
                     handleCollectionChange={handleCollectionChange}
                     />
             </div>
-
-            Current collection: {currentCollection}
-
             <div className="sidebar__right-pane">
                 <a className="sidebar__masthead" href="/">
-                    <img src={logoUrl} alt="Futuregov"/>
-                    <h1>Technology</h1>
+                    <img className="sidebar__logo" src={logoUrl} alt="Futuregov"/>
+                    <h1 className="sidebar__title">Technology</h1>
                 </a>
-                <Contents currentCollection={collections[currentCollection]}/>
+                <Contents 
+                    currentCollection={collections[currentCollection]}
+                    currentSlug={currentSlug}
+                    />
             </div>
         </aside>
     )     
