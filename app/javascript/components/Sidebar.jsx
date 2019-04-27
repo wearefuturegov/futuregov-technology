@@ -4,15 +4,13 @@ import Contents from './Contents'
 
 export default ({logoUrl, collections, currentSlug, currentCollectionId}) => {
 
+    // Calculate and set initial collecton
     let initialCollection = collections.findIndex((collection)=>{
         if(collection.id === currentCollectionId){
             return true
         }
     })
-
     if(initialCollection === -1){initialCollection = 0}
-
-    console.log(initialCollection)
 
     const [currentCollection, setCurrentCollection] = useState(initialCollection)
 

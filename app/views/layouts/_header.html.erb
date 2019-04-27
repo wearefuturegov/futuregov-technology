@@ -3,7 +3,9 @@
   <%= render 'layouts/search' %>
 
   <div class="site-header__actions">
-    <%= link_to "New entry", new_entry_path, class: "site-header__action site-header__action--primary" %>
+    <%= link_to new_entry_path, class: "site-header__action site-header__action--primary" do %>
+      <span class="site-header__icon">+</span> New entry
+    <% end %>
     <% if current_user %>
       <%= link_to('Log out', destroy_user_session_path, method: :delete, class: "site-header__action") %>   
     <% end %>

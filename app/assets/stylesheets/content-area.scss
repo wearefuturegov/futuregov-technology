@@ -1,0 +1,10 @@
+.content-area{
+    padding: 40px 25px;
+    background: $white;
+    @media screen and (min-width: 1000px){
+        padding: 40px 40px;
+    }
+    @media screen and (min-width: 1400px){
+        padding: 60px 50px;
+    }
+}

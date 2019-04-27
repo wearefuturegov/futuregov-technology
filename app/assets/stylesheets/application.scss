@@ -24,8 +24,20 @@
     box-sizing: border-box;
 }
 
+.visually-hidden{
+    font-size: 0;
+    color: rgba(0,0,0,0)
+}
+
 .turbolinks-progress-bar{
     background: $pink
+}
+
+a{
+    color: $pink;
+    &:hover{
+        text-decoration: none;
+    }
 }
 
 body{
@@ -58,3 +70,7 @@ body{
 @import 'login';
 @import 'sidebar';
 @import 'header';
+@import 'content-area';
+@import 'footer';
+@import 'notifications';
+@import 'entry';
