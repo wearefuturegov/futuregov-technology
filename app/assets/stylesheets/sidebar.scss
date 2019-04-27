@@ -19,7 +19,7 @@
 }
 
 .collections-list{
-    white-space: pre;
+    white-space: nowrap;
     transform: rotate(90deg)
 }
 
@@ -52,7 +52,6 @@
         cursor: initial;
     }
     &:after{
-        transform: translateY(-5px);
         opacity: 1;
     }
 }
