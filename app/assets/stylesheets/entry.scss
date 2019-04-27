@@ -13,10 +13,13 @@
 }
 
 .entry__updated{
-    display: inline-block;
-    font-style: italic;
-    color: $lightGrey;
+    color: darken($lighterGrey, 10);
     margin-right: 15px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 750px) {
+        display: inline-block;
+        margin-bottom: 0px;
+    }
 }
 
 .entry__edit-link{
