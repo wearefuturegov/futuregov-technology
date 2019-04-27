@@ -32,13 +32,13 @@ body{
     background: $backgroundReddish;
 }
 
+// App layout
 .app{
     height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: row;
 }
-
 .sidebar-container{
     width: 290px;
     overflow-x: hidden;
@@ -46,7 +46,6 @@ body{
     overflow-y: hidden;
     height: 100vh;
 }
-
 .main-pane{
     flex: 1;
     overflow-x: hidden;
@@ -55,10 +54,7 @@ body{
 
 
 
-
-
-
-
 // Get other modules
 @import 'login';
 @import 'sidebar';
+@import 'header';

@@ -63,6 +63,8 @@
 .sidebar__right-pane{
     color: $white;
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 .sidebar__masthead{
     display: block;
@@ -86,6 +88,8 @@
 
 .category-list{
     list-style-type: none;
+    height: 100%;
+    overflow-y: scroll;
 }
 .category-list__item{
     margin-bottom: 30px;
