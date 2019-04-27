@@ -93,15 +93,18 @@
 }
 
 .links__new-link-close{
+    color: darken($lighterGrey, 20);
     position: absolute;
     right: 10px;
-    top: 0px;
+    top: 8px;
     background: none;
     border: none;
-    font-size: 2em;
+    font-size: 30px;
     cursor: pointer;
-    color: darken($lighterGrey, 20);
     transition: 0.1s ease-in-out;
+    height: 30px;
+    width: 30px;
+    display: block;
     &:before{
         content: "✕"
     }
