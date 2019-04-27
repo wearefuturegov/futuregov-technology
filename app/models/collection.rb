@@ -1,4 +1,4 @@
 class Collection < ApplicationRecord
-    has_many :categories
-    has_many :entries, :through => :categories
+    has_many :categories, -> { order 'name asc' }
+    has_many :entries, -> { order 'title asc' }, :through => :categories
 end
