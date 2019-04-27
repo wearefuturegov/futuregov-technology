@@ -6,8 +6,8 @@
           logoUrl: asset_url("wordmark.svg"),
           collections: @collections,
           currentSlug: params[:slug],
-          currentCollectionId: (@entry.collection.id if @entry),
-        }, class: "sidebar-container", prerender: false %>
+          currentCollectionId: @collectionId,
+        }, class: "sidebar-container", prerender: true %>
 
         <div class="main-pane">
             <%= render 'layouts/header' %>

@@ -61,6 +61,7 @@ class EntriesController < ApplicationController
 
   def set_entry
     @entry = Entry.find_by( slug: params[:slug])
+    @collectionId = @entry.collection.id
   end
 
   def set_category_options
