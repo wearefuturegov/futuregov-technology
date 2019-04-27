@@ -65,7 +65,9 @@ class EntriesController < ApplicationController
   end
 
   def set_category_options
-    @category_options = Category.all.map{|c| [ c.name, c.id ] }
+    @collection_category_options = Collection.all.map do |col|
+        [col.name, col.categories.map { |c| [c.name, c.id] }]
+      end
   end
 
   def entry_params
