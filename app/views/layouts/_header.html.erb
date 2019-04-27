@@ -1,14 +1,29 @@
 <header class="site-header">
 
-  <%= render 'layouts/search' %>
+  <div class="site-header__top-row">
+    <%= link_to root_path, class: "site-header__mobile-masthead" do %>
+      <%= image_tag "brandmark.svg", class: "site-header__mobile-logo" %>
+      <h1 class="site-header__mobile-name">Tech</h1>
+    <% end %>
 
-  <div class="site-header__actions">
-    <%= link_to new_entry_path, class: "site-header__action site-header__action--primary" do %>
-      <span class="site-header__icon">+</span> New entry
+    <%= link_to new_entry_path, class: "site-header__mobile-action" do %>
+      <span>+</span> New entry
     <% end %>
-    <% if current_user %>
-      <%= link_to('Log out', destroy_user_session_path, method: :delete, class: "site-header__action") %>   
-    <% end %>
+  </div>
+
+  <div class="site-header__bottom-row">
+
+    <%= render 'layouts/search' %>
+
+    <div class="site-header__actions">
+      <%= link_to new_entry_path, class: "site-header__action site-header__action--primary" do %>
+        <span class="site-header__icon">+</span> New entry
+      <% end %>
+      <% if current_user %>
+        <%= link_to('Log out', destroy_user_session_path, method: :delete, class: "site-header__action") %>   
+      <% end %>
+    </div>
+
   </div>
 
 </header>

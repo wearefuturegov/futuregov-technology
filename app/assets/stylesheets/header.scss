@@ -1,7 +1,7 @@
-.site-header{
+.site-header__bottom-row{
     border-bottom: 1px solid $lighterGrey;
     width: 100%;
-    padding: 25px;
+    padding: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -14,8 +14,47 @@
     }
 }
 
-.search-field{
+.site-header__top-row{
+    background: $purple;
+    width: 100;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (min-width: 750px){
+        display: none;
+    }
+}
+
+.site-header__mobile-masthead{
+    text-decoration: none;
+}
+
+.site-header__mobile-logo{
+    width: 40px;
+}
+.site-header__mobile-name{
+    display: inline;
+    font-size: 2em;
+    font-weight: normal;
+    color: $white;
+}
+.site-header__mobile-action{
+    color: $white;
+    text-decoration: none;
+    span{
+        color: $white;
+        border-color: $white;
+    }
+}
+
+.search-form{
     position: relative;
+    width: 100%;
+    @media screen and (min-width: 750px) {
+        max-width: 200px;
+    }
 }
 
 .search-field__input{
@@ -23,9 +62,9 @@
     border: 1px solid $lighterGrey;
     border-radius: 5px;
     padding: 5px;
-    max-width: 200px;
     font-size: 1em;
     padding-right: 35px;
+    width: 100%;
 }
 
 .search-field__icon{
@@ -42,6 +81,13 @@
     }
     &:hover i {
         color: $darkestPurple;
+    }
+}
+
+.site-header__actions{
+    display: none;
+    @media screen and (min-width: 750px){
+        display: block;
     }
 }
 
