@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>FutureGov Technology</title>
+
+
+
+    <title><%= content_for?(:title) ? yield(:title) + " | " : "" %>FutureGov Technology</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type => "image/x-icon" %>
@@ -15,6 +18,5 @@
   </head>
   <body>
     <%= yield %>
-    
   </body>
 </html>
