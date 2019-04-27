@@ -1,3 +1,50 @@
 .links{
-    margin-top: 30px;
+    margin-top: 45px;
+}
+
+.links__title{
+    color: $lightGrey;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 100;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.links__list{
+    list-style-type: none;
+}
+
+.links__link-container{
+    margin-bottom: 20px;
+}
+
+.links__link{
+    text-decoration: none;
+    display: block;
+    position: relative;
+    &:hover .links__link-description{
+        text-decoration: underline   
+    }
+}
+
+.links__link-url{
+    color: $lighterGrey;
+}
+
+.links__link-description{
+    color: $pink;
+    // margin-bottom: 5px;
+}
+
+.links__new-link{
+    border: 1px solid $lighterGrey;
+    text-align: center;
+    color: darken($lighterGrey, 10);
+    background: $backgroundReddish;
+    border-radius: 5px;
+    padding: 20px;
+    width: 100%;
+    font-size: 1em;
+    cursor: pointer;
 }

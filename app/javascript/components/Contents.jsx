@@ -5,7 +5,7 @@ export default ({currentCollection, currentSlug}) =>
         className="category-list" 
         aria-live="polite" 
         role="tabpanel" 
-        aria-labelledby={`sidebar-tab-${collection.id}`}
+        aria-labelledby={`sidebar-tab-${currentCollection.id}`}
         >
         {currentCollection.categories.map((category, i) => 
             <li 
