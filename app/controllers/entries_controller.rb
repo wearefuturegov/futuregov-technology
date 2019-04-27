@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
   before_action :set_category_options, only: [:new, :edit, :update, :create]
 
   def index
-    @recently_changed = Entry.order("updated_at DESC").limit(5)
+    @recently_changed = Entry.order("updated_at DESC").limit(4)
   end
 
   def results
