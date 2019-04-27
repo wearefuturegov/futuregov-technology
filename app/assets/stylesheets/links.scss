@@ -1,9 +1,14 @@
 .links{
     margin-top: 45px;
+    @media screen and (min-width: 1000px) {
+        margin-top: 0px;
+        padding-left: 75px;
+        width: 375px;
+    }
 }
 
 .links__title{
-    color: $lightGrey;
+    color: darken($lighterGrey, 10);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 100;
@@ -17,14 +22,39 @@
 
 .links__link-container{
     margin-bottom: 20px;
+    position: relative;
+    &:hover{
+        .links__remove-link{
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
 }
 
 .links__link{
     text-decoration: none;
     display: block;
     position: relative;
+    padding-right: 50px;
     &:hover .links__link-description{
         text-decoration: underline   
+    }
+}
+
+.links__remove-link{
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    font-size: 1.1em;
+    transition: 0.1s ease-out;
+    transform: translateX(80px);
+    opacity: 0;
+    i{
+        color: $pink;
+    }
+    &:hover{
+        transform: scale(1.2) translateX(0px) !important;
+        filter: brightness(1.2);
     }
 }
 
@@ -38,13 +68,44 @@
 }
 
 .links__new-link{
-    border: 1px solid $lighterGrey;
+    border: none;
     text-align: center;
-    color: darken($lighterGrey, 10);
-    background: $backgroundReddish;
+    color: darken($lighterGrey, 20);
+    background: $backgroundNeutral;
     border-radius: 5px;
     padding: 20px;
     width: 100%;
     font-size: 1em;
     cursor: pointer;
+    transition: 0.1s ease-in-out;
+    &:hover{
+        color: darken($lighterGrey, 40);
+        border-color: darken($lighterGrey, 10);
+        background: darken($backgroundNeutral, 2);
+    }
+}
+
+.links__new-link-fields{
+    position: relative;
+    padding: 30px 20px 20px 20px;
+    background: $backgroundNeutral;
+    border-radius: 5px;
+}
+
+.links__new-link-close{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: darken($lighterGrey, 20);
+    transition: 0.1s ease-in-out;
+    &:before{
+        content: "✕"
+    }
+    &:hover{
+        color: $lightGrey;
+    }
 }

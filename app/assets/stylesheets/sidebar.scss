@@ -33,8 +33,9 @@
         width: 7px;
         border-radius: 0px 7px 7px 0px;
         background: white;
-        left: -20px;
+        left: -15px;
         transition: 0.1s ease-in-out;
+        opacity: 0;
     }
 }
 .collections-list__item--active{
@@ -43,7 +44,8 @@
         cursor: initial;
     }
     &:after{
-        transform: translateX(10px);
+        transform: translateX(5px);
+        opacity: 1;
     }
 }
 .collections-list__button{

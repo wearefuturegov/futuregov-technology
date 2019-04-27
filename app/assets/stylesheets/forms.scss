@@ -52,3 +52,38 @@
         font-size: 1.1em;
     }
 }
+
+.form-field--small{
+    margin-bottom: 25px;
+    &:focus-within{
+        .form-label--small{
+            color: $darkestPurple;
+        } 
+        .form-input--small{
+            border-color: $darkestPurple
+        }
+    }
+}
+
+.form-label--small{
+    margin-bottom: 5px;
+    display: block;
+    color: darken($lighterGrey, 20);
+    font-size: 0.95em;
+    transition: 0.1s ease-in-out;
+}
+
+.form-input--small{
+    background: none;
+    border: none;
+    border-bottom: 1px solid darken($lighterGrey, 20);
+    border-radius: 0px;
+    padding: 7px 0px;
+    font-size: 0.95em;
+    width: 100%;
+    color: $darkestPurple;
+    transition: 0.1s ease-in-out;
+    &::placeholder{
+        color: darken($lighterGrey, 10);
+    }
+}

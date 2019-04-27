@@ -32,7 +32,15 @@
 .entry__content{
     font-size: 1em;
     color: $darkestPurple;
+    flex: 1;
     @media screen and (min-width: 1400px){
         font-size: 1.1em;
+    }
+}
+
+.entry__grid{
+    @media screen and (min-width: 1000px) {
+        display: flex;
+        flex-direction: row;
     }
 }

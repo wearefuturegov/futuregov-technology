@@ -1,0 +1,28 @@
+.search-results{
+    border: 1px solid $lighterGrey;
+    border-radius: 8px;
+    padding: 25px;
+    width: 100%;
+    @media screen and (min-width: 800px){
+        padding: 35px;
+    }
+}
+
+.search-results__number{
+    margin-bottom: 25px;
+}
+
+.search-results__results{
+    list-style: none;
+}
+
+.search-results__result{
+    margin-bottom: 25px;
+}
+
+.search-results__title{
+    margin-bottom: 5px;
+    color: $pink;
+    font-weight: normal;
+    font-size: 1.5em;
+}

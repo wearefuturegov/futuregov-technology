@@ -9,13 +9,11 @@
             </div>
         </section>
 
-        <section class="entry__content">
-            <%= sanitize @entry.body %>
-        </section>
-
-        <%= render 'links/links' %>
-
-        <%= render 'links/new-link' %>
-
+        <div class="entry__grid">
+            <section class="entry__content">
+                <%= sanitize @entry.body %>
+            </section>
+            <%= render 'links/links' %>
+        </div>
     </div>
 <% end %>
