@@ -1,9 +1,11 @@
 import React from 'react'
 
 export default ({collections, currentCollection, handleCollectionChange}) =>
-    <ul className="collections-list">
+    <ul className="collections-list" role="tablist">
         {collections.map((collection, i) =>
-            <li 
+            <li
+                role="tab" 
+                id={`sidebar-tab-${collection.id}`}
                 className={(currentCollection === i)? "collections-list__item collections-list__item--active" : "collections-list__item"} 
                 key={i}
                 >
