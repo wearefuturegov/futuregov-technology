@@ -1,13 +1,12 @@
 .content-area{
-    background-color: $white;
-    padding: 30px 15px;
-    @media screen and (min-width: 800px) {
-        padding: 80px;
-    }
+    padding: 40px 25px;
+    background: $white;
+    position: relative;
     @media screen and (min-width: 1000px) {
-        padding: 100px 160px;
+        padding: 40px 40px;
     }
-    @media screen and (min-width: 1600px) {
-        padding: 160px 220px;
+    @media screen and (min-width: 1400px){
+        padding: 60px 50px;
     }
 }
+

@@ -1,10 +1,10 @@
-<%= render layout: 'layouts/entries' do %>
+<% content_for :title, "Editing entry" %>
+<%= render layout: 'layouts/app' do %>
 
     <div class="editor" >
-        <div class="editor__header">
-            <h1 class="editor__title">Editing entry</h1>
-            <%= link_to "← Go back", entry_path(@entry) %>
-        </div>
+        <h1 class="visually-hidden">Editing entry</h1>
+        <%= link_to "← Go back", entry_path(@entry), class: "go-back" %>
+        <div class="editor__header"></div>
 
         <%= render 'entries/form' %>
         

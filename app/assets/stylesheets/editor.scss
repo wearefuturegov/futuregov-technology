@@ -1,19 +1,11 @@
 .editor__header{
-    margin-bottom: 40px;
-    @media screen and (min-width: 1000px) {
-        margin-bottom: 60px;
-    }
+    margin-bottom: 35px;
 }
 
 .editor__title{
-    font-weight: normal;
     margin-bottom: 10px;
-    @media screen and (min-width: 800px) {
-        font-size: 2.5em;
-    }
-    @media screen and (min-width: 1000px) {
-        font-size: 3em;
-    }
+    color: $darkestPurple;
+    font-size: 2.5em;
 }
 
 .editor__delete{
@@ -25,4 +17,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.go-back{
+    position: absolute;
+    top: 10px;
 }

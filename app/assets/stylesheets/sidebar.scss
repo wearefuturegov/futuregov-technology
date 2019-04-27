@@ -1,0 +1,135 @@
+.sidebar{
+    display: none;
+    background: $purple;
+    height: 100%;
+    flex-direction: row;
+    display: flex;
+}
+
+// Left pane
+.sidebar__left-pane{
+    background: $darkPurple;
+    height: 100%;
+    width: 70px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    overflow: hidden;
+    padding: 10px;
+}
+.collections-list__item{
+    display: inline-block;
+    position: relative;
+    &:hover{
+        .collections-list__button{
+            color: $white;
+        }
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        display: block;
+        top: 15px;
+        bottom: 15px;
+        width: 7px;
+        border-radius: 0px 7px 7px 0px;
+        background: white;
+        left: -15px;
+        transition: 0.1s ease-in-out;
+        opacity: 0;
+    }
+}
+.collections-list__item--active{
+    .collections-list__button{
+        color: $white;
+        cursor: initial;
+    }
+    &:after{
+        transform: translateX(5px);
+        opacity: 1;
+    }
+}
+.collections-list__button{
+    font-family: $fontStack;
+    text-transform: uppercase;
+    color: $lighterGrey;
+    letter-spacing: 2px;
+    font-weight: light;
+    font-size: 0.9em;
+    background: none;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+// Right pane
+.sidebar__right-pane{
+    color: $white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar__masthead{
+    display: block;
+    text-decoration: none;
+    transition: 0.1s ease-in-out;
+    margin: 25px 25px 40px 25px;
+    &:hover{
+        opacity: 0.85;
+        transition: 0.5s ease-in-out;
+    }
+}
+.sidebar__logo{
+    width: 150px;
+}
+.sidebar__title{
+    font-weight: normal;
+    font-size: 1.1em;
+    color: $white;
+}
+
+
+.category-list{
+    list-style-type: none;
+    height: 100%;
+    overflow-y: scroll;
+}
+.category-list__item{
+    margin-bottom: 30px;
+}
+
+.category-list__title{
+    margin: 0px 25px 10px 25px;
+    color: $lightPurple;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.entry-list{
+    list-style-type: none;
+}
+
+.entry-list__item{
+    margin-bottom: 10px;
+}
+
+.entry-list__link{
+    color: $lighterGrey;
+    text-decoration: none;
+    display: block;
+    padding: 5px 25px;
+    &:hover{
+        background: $darkestPurple;
+    }
+}
+
+.entry-list__link--active{
+    background: $pink;
+    color: $white;
+    &:hover{
+        background: $pink;
+    }
+}

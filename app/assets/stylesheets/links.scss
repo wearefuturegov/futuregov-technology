@@ -1,162 +1,111 @@
 .links{
-    padding-top: 30px;
-    @media screen and (min-width: 800px) {
-        padding-top: 80px;
-    }
+    margin-top: 45px;
     @media screen and (min-width: 1000px) {
-        padding-top: 100px;
-    }
-    @media screen and (min-width: 1600px) {
-        padding-top: 160px;
+        margin-top: 0px;
+        padding-left: 75px;
+        width: 375px;
     }
 }
 
 .links__title{
-    color: $lightGrey;
-    font-weight: bold;
-    letter-spacing: 2.5px;
+    color: darken($lighterGrey, 10);
     text-transform: uppercase;
-    font-size: 1em;
-    margin-bottom: 15px;
-    @media screen and (min-width: 800px){
-        font-size: 1.1em;
-        margin-bottom: 25px;
-    }
+    letter-spacing: 2px;
+    font-weight: 100;
+    font-size: 1.1em;
+    margin-bottom: 30px;
 }
 
 .links__list{
     list-style-type: none;
-    @media screen and (min-width: 800px){
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
-        grid-column-gap: 25px;
-    }
-    @media screen and (min-width: 1500px){
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    @media screen and (min-width: 1800px){
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
 }
 
 .links__link-container{
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     position: relative;
-    overflow: hidden;
     &:hover{
         .links__remove-link{
             transform: translateX(0px);
+            opacity: 1;
         }
     }
 }
 
 .links__link{
-    background-color: $backgroundReddish;
-    display: block;
-    width: 100%;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid darken($backgroundReddish, 5);
-    font-size: 1.1em;
-    color: $pink;
-    height: 100%;
     text-decoration: none;
-    padding-right: 60px;
-    transition: 0.1s ease-out;
-    &:hover{
-        filter: brightness(0.95);
-    }
-    @media screen and (min-width: 1000px){
-        padding: 25px;
-        padding-right: 75px;
+    display: block;
+    position: relative;
+    padding-right: 50px;
+    &:hover .links__link-description{
+        text-decoration: underline   
     }
 }
 
 .links__remove-link{
     position: absolute;
     right: 15px;
-    bottom: 15px;
+    top: 0px;
     font-size: 1.1em;
     transition: 0.1s ease-out;
     transform: translateX(80px);
+    opacity: 0;
+    i{
+        color: $pink;
+    }
     &:hover{
         transform: scale(1.2) translateX(0px) !important;
         filter: brightness(1.2);
     }
-    @media screen and (min-width: 1000px){
-        right: 25px;
-        bottom: 25px;
-    }
+}
+
+.links__link-url{
+    color: $lighterGrey;
+}
+
+.links__link-description{
+    color: $pink;
+    // margin-bottom: 5px;
 }
 
 .links__new-link{
-    display: block;
-    width: 100%;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid darken($backgroundReddish, 5);
-    text-align: center;
-    font-weight: 600;
-    color: $lighterGrey;
-    font-size: 1.1em;
-    background: none;
-    height: 100%;
-    cursor: pointer;
-    transition: 0.1s ease-out;
-    &:hover{
-        filter: brightness(0.8);
-    }
-    @media screen and (min-width: 1000px){
-        padding: 25px;
-    }
-}
-
-.new-link-dialog{
-    background-color: $white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.4);
-    color: $darkPurple;
     border: none;
-    max-width: 600px;
-    margin: 0px 30px;
-    position: fixed;
-    top: 60px;
-    left: 0px;
-    right: 0px;
-    z-index: 100;
-    overflow: hidden;
-    animation: fadeIn 0.2s ease-out;
-    @media screen and (min-width: 800px){
-        top: 120px;
-        margin: 0px auto;
-        min-width: 500px;
+    text-align: center;
+    color: darken($lighterGrey, 20);
+    background: $backgroundNeutral;
+    border-radius: 5px;
+    padding: 20px;
+    width: 100%;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    &:hover{
+        color: darken($lighterGrey, 40);
+        border-color: darken($lighterGrey, 10);
+        background: darken($backgroundNeutral, 2);
     }
+}
 
-    &::backdrop{
-        background: transparentize($lightGrey, 0.5);
-        animation: fadeIn 0.2s ease-out;
+.links__new-link-fields{
+    position: relative;
+    padding: 30px 20px 20px 20px;
+    background: $backgroundNeutral;
+    border-radius: 5px;
+}
+
+.links__new-link-close{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: darken($lighterGrey, 20);
+    transition: 0.1s ease-in-out;
+    &:before{
+        content: "✕"
     }
-
-}
-
-.new-link-dialog__content{
-    padding: 30px;
-}
-
-.new-link-dialog__actions{
-    padding: 30px;
-    background-color: $backgroundReddish;
-}
-
-
-.backdrop{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: transparentize($darkPurple, 0.5);
-    animation: fadeIn 0.2s ease-out;
+    &:hover{
+        color: $lightGrey;
+    }
 }

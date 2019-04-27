@@ -1,0 +1,89 @@
+.form-field{
+    margin-bottom: 45px;
+    &:focus-within{
+        .form-label{
+            color: $darkestPurple;
+        } 
+        .form-select, .form-input{
+            border-color: $darkestPurple
+        }
+    }
+}
+
+.form-label{
+    margin-bottom: 5px;
+    display: block;
+    color: $lighterGrey;
+    transition: 0.1s ease-in-out;
+}
+
+.form-select, .form-input{
+    appearence: none;
+    -webkit-appearance: none;
+    background: $white;
+    border: none;
+    border-bottom: 1px solid $lighterGrey;
+    border-radius: 0px;
+    padding: 10px 0px;
+    font-size: 1em;
+    width: 100%;
+    color: $darkestPurple;
+    max-width: 650px;
+    transition: 0.1s ease-in-out;
+    ::placeholder{
+        color: $lighterGrey
+    }
+}
+
+.form-select{
+    background: image-url("chevron.svg");
+    background-repeat: no-repeat;
+    background-position: 99% 50%;
+}
+
+.form-input--title{
+    font-size: 1.8em;
+}
+
+.form-input--body{
+    padding: 15px 0px 10px 0px;
+    max-width: 100%;
+    @media screen and (min-width: 1400px){
+        font-size: 1.1em;
+    }
+}
+
+.form-field--small{
+    margin-bottom: 25px;
+    &:focus-within{
+        .form-label--small{
+            color: $darkestPurple;
+        } 
+        .form-input--small{
+            border-color: $darkestPurple
+        }
+    }
+}
+
+.form-label--small{
+    margin-bottom: 5px;
+    display: block;
+    color: darken($lighterGrey, 20);
+    font-size: 0.95em;
+    transition: 0.1s ease-in-out;
+}
+
+.form-input--small{
+    background: none;
+    border: none;
+    border-bottom: 1px solid darken($lighterGrey, 20);
+    border-radius: 0px;
+    padding: 7px 0px;
+    font-size: 0.95em;
+    width: 100%;
+    color: $darkestPurple;
+    transition: 0.1s ease-in-out;
+    &::placeholder{
+        color: darken($lighterGrey, 10);
+    }
+}

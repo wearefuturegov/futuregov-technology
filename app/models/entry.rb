@@ -1,6 +1,7 @@
 class Entry < ApplicationRecord
   belongs_to :category, optional: true
   has_many :external_links
+  has_one :collection, :through => :category
   
   validates :title, presence: true, uniqueness: true, :case_sensitive => false
   validates :body, presence: true

@@ -1,11 +1,18 @@
 
 <div class="app">
-    <%= render 'layouts/header' %>
-    <div class="app-body">
-        <%= render 'layouts/contents' %>
-        <div class="main-pane">
-            <main class="content-area">
+    <%# <div class="app-body"> %>
+    
+        <%= react_component "Sidebar", {
+          logoUrl: asset_url("wordmark.svg"),
+          collections: @collections,
+          currentSlug: params[:slug],
+          currentCollectionId: @collectionId,
+        }, class: "sidebar-container", prerender: true %>
 
+        <div class="main-pane">
+            <%= render 'layouts/header' %>
+
+            <main class="content-area">
               <% if notice %>
                 <p class="notification notification--notice"><%= fa_icon "check" %> <%= notice %></p>
               <% end %>
@@ -14,9 +21,10 @@
               <% end %>
 
               <%= yield %>
-
             </main>
+
             <%= render 'layouts/footer' %>
         </div>
-    </div>
+
+    <%# </div> %>
 </div>

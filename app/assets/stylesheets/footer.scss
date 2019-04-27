@@ -1,25 +1,20 @@
 .site-footer{
-    padding: 40px 15px;
+    padding: 40px 25px;
     font-size: 0.9em;
-    @media screen and (min-width: 800px) {
-        padding: 40px 80px;
-        font-size: 1em;
+    @media screen and (min-width: 1000px){
+        padding: 40px 40px;
     }
-    @media screen and (min-width: 1000px) {
-        padding: 40px 160px;
+    @media screen and (min-width: 1400px){
+        padding: 50px 50px;
     }
-    @media screen and (min-width: 1600px) {
-        padding: 60px 220px;
-    }
-
 }
 
 .site-footer__info{
-    color: $lighterGrey;
+    color: $lightGrey;
     margin-bottom: 10px;
 }
 
 .site-footer__link{
-    color: $lightGrey;
+    color: darken($lightGrey, 5);
     margin-right: 10px;
 }
