@@ -13,7 +13,7 @@
 
     <div class="form-field">
         <%= f.label :title, class: "form-label" %>
-        <%= f.text_field :title, class: "form-input", required: true %>
+        <%= f.text_field :title, class: "form-input form-input--title", required: true, placeholder: "Add title..." %>
     </div>
 
     <div class="form-field">
@@ -23,7 +23,7 @@
 
     <div class="form-field">
         <%= f.label :body, class: "form-label visually-hidden" %>
-        <trix-editor input="entry_body" class="form-input"></trix-editor>
+        <trix-editor input="entry_body" class="form-input form-input--body" placeholder="Start writing your entry..." ></trix-editor>
         <%= f.hidden_field :body, class: "form-input" %>
     </div>
 

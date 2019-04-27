@@ -1,0 +1,20 @@
+.editor__header{
+    margin-bottom: 35px;
+}
+
+.editor__title{
+    margin-bottom: 10px;
+    color: $darkestPurple;
+    font-size: 2.5em;
+}
+
+.editor__delete{
+    padding: 20px;
+    margin-top: 40px;
+    background-color: $backgroundReddish;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

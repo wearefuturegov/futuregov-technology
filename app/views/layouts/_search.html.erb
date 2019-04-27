@@ -1,8 +1,8 @@
 <%= form_tag "/search", method: :get do %>
 
-    <div class="form-field search-field">
-        <%= label_tag "search_query", "Search query", class: "form-label visually-hidden" %>
-        <%= text_field_tag "search_query", @search_query, placeholder: "Search", class: "form-input", required: true %>
+    <div class="search-field">
+        <%= label_tag "search_query", "Search query", class: "visually-hidden" %>
+        <%= text_field_tag "search_query", @search_query, placeholder: "Search", class: "search-field__input", required: true %>
         <%= button_tag(type: 'submit', class: "search-field__icon") do %>
             <%= fa_icon("search") %>
             <span class="visually-hidden">Search</span>
