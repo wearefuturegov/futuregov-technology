@@ -53,7 +53,7 @@ class EntriesController < ApplicationController
   private
 
   def set_sidebar_props
-    @collections = Collection.includes(:categories, :entries).as_json(include: {
+    @collections = Collection.order("name ASC").includes(:categories, :entries).as_json(include: {
       categories: {
         include: :entries
       }
